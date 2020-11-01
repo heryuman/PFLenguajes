@@ -1,0 +1,38 @@
+digraph {
+	node [color=blue fontcolor=red shape=box]
+	subgraph BloqueSeccondicion_pruebaIf {
+		0 [label=sentencia_if]
+		2 [label=condicion_pruebaIf]
+		0 -> 2
+	}
+	subgraph "BloqueSecrango_['elemento', 'in', 'coleccion']" {
+		6 [label=sentencia_Foreach]
+		12 [label="rango_['elemento', 'in', 'coleccion']"]
+		6 -> 12
+	}
+	subgraph BloqueSeccondicion_whileVachio {
+		14 [label=sentencia_while]
+		16 [label=condicion_whileVachio]
+		14 -> 16
+	}
+	subgraph "BloqueSecParams_['param1', 'param2', 'param3']" {
+		21 [label=DEfFunc_funcion1]
+		30 [label="Params_['param1', 'param2', 'param3']"]
+		21 -> 30
+	}
+	subgraph BloquePrincipal {
+		graph [rank=min]
+		"" [label=inicio]
+		0 [label=sentencia_if]
+		"" -> 0
+		0 [label=sentencia_if]
+		6 [label=sentencia_Foreach]
+		0 -> 6
+		6 [label=sentencia_Foreach]
+		14 [label=sentencia_while]
+		6 -> 14
+		14 [label=sentencia_while]
+		21 [label=DEfFunc_funcion1]
+		14 -> 21
+	}
+}
