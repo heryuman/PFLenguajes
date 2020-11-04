@@ -10,7 +10,7 @@ swhitch = "no"
 def unGrafo(entrada):
     global t
     cont=0
-    f = Digraph(filename=str(cont)+'grafohdp.gv')
+    f = Digraph(filename=str(cont)+'grafoPFinal.gv')
     f.attr('node', shape='box', color='blue', fontcolor='red')
     t=f
     global p

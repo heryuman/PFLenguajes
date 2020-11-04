@@ -254,7 +254,7 @@ def simbolos(simbolo):
 
 def EsReservada(comparar):
     diccionario = ['SCRIPT', 'LANGUE', 'var', 'let', 'const', 'if', 'while', 'foreach', 'case', 'switch', 'break',
-                   'default', 'in','print','true','false',]
+                   'default', 'in','true','false',]
     tipo = "tk_Id"
     for i in range(0, len(diccionario)):
         if diccionario[i] == comparar:
@@ -292,7 +292,11 @@ def ReporteErrores():
 def LlamarParser():
 
     print("LLAMANDO AL PARSER")
-    Myparser.AutomatadePila(ListTokens)
+    if len(ListaErrores) == 0:
+        Myparser.AutomatadePila(ListTokens)
+    else:
+        print("Existen Errores Lexicos, no se puede proceder al Analisis Sintactico")
+
 
 def GeneararGrafo():
     print("Generando el grafo")

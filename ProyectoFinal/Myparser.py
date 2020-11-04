@@ -187,6 +187,8 @@ def AutomatadePila(ListadeTokens):
 
 
 
+            elif pila[it] == "I" and entrada[n].getTipo()=="tk_parC":
+                pila.pop(it)
 
             elif pila[it]== "S"and entrada[n].getTipo()== "tk_LlaveC":
                 pila.pop(it)

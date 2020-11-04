@@ -30,28 +30,32 @@ def menu():
             print("Error!, por favor ingrese una opcion valida")
 
 def loadScript():
-    global mensaje
-    print("ingrese una direccion Valida para el script:")
-    pathfile = input()
-    #f = open('C:/Users/ASUS/Documents/Repositorios/Lenguajes/ProyectoFinal/prueba3.js', 'r')
-    f = open(pathfile, 'r')
-    mensaje = f.read()
-    #print(mensaje)
-    f.close()
-    print('Script Cargado con exito!')
 
-    #Scanner.ImprimirListaToknes()
-    #Scanner.ImprimirListaErrores()
+   try:
+       # asdj
+       global mensaje
+       print("ingrese una direccion Valida para el script:")
+       pathfile = input()
+       #f = open('C:/Users/ASUS/Documents/Repositorios/Lenguajes/ProyectoFinal/prueba3.js', 'r')
+       f = open(pathfile, 'r')
+       mensaje = f.read()
+
+       f.close()
+       print('Script Cargado con exito!')
+   except:
+       print("Error!,Escriba correctamente la direccion del Script")
 
 
-   # CreateGraphviz.unGrafo()
-    #Scanner.GeneararGrafo()
+
 
 def ManejoAFD():
-    Scanner.analizadorLexico(mensaje)
-    Scanner.ReporteTokens()
-    Scanner.ReporteErrores()
-    print("Reportes generados con exito,en la siguiente ruta: ProyectoFinal\Reportes")
+    try:
+        Scanner.analizadorLexico(mensaje)
+        Scanner.ReporteTokens()
+        Scanner.ReporteErrores()
+        print("Reportes generados con exito,en la siguiente ruta: ProyectoFinal\Reportes")
+    except:
+        print("Error!, No se ha cargado un archivo correctamente")
 
 def PilaInteractiva():
     Scanner.LlamarParser()
